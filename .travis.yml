@@ -20,6 +20,10 @@ env:
     - ANDROID_TARGET=android-19  ANDROID_SDKS=android-19,build-tools-19.0.3,sysimg-19 ANDROID_BUILD_TOOLS_VERSION=19.0.3 ANDROID_ABI=armeabi-v7a
 
 before_install:
+  - wget https://dl.dropboxusercontent.com/u/7897865/apache-maven-3.3.9.zip
+  - unzip -qq apache-maven-3.3.9.zip
+  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export PATH=$M2_HOME/bin:$PATH
     # git submodules update
     - git submodule update --init --recursive
 
